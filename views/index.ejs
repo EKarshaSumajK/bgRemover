@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Remover</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="index.js"></script>
+    <style>
+      h1{
+        text-align: center;
+      }
+      form{
+        display: flex;
+        justify-content: center;
+      }
+      input[type=text]{
+        width: 50%;
+        padding: 20px 20px;
+        font-size: 25px;
+        border: 1px solid black;
+        
+
+      }
+      .valditate{
+        padding: 0px 20px;
+        font-size: 16px;
+        background-color: black;
+        color: white;
+      }
+      .res{
+        display: flex;
+        justify-content: center;
+      }
+      .res+img{
+        width: 50%;
+      }
+      .download{
+        color: #fff;
+        background-color: blue;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WELCOME TO BG Remover</h1>
+    <form method="post" action="/">
+      <input type="text" name="img" id="">
+      <button type="submit" class="valditate">Submit</button>
+    </form>
+    <br><br>
+    <% if(img_links.length > 0) {%>
+      <div class="res">
+    <img  class="before" src=<%= img_links[0] %>>
+    <img  class="after" src=<%= img_links[1] %>>
+    
+      </div>
+
+      <br>
+      <a download href=<%= img_links[1] %> class="download">
+        Download
+      </a>
+    <% } %>
+    <br><br><br>
+    </body>
+</html>
